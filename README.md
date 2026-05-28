@@ -6,8 +6,16 @@ Qualifying learners are required to be competent in the outcomes against the bac
 
 ## Build Assignment 1
 
+Generate all PlantUML diagrams from the `.puml` sources in `assets/` with:
+
+```sh
+plantuml -tsvg assets/*.puml
+```
+
 Compile the Typst source to PDF with:
 
 ```sh
 typst compile assignment1.typ assignment1.pdf
 ```
+
+Run the PlantUML command again whenever a `.puml` file changes or a new diagram source is added. The generated `.svg` files are used by Typst when compiling the assignment.
