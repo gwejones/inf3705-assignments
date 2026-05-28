@@ -1,0 +1,78 @@
+@startuml
+left to right direction
+
+actor Customer
+actor "Accounting system" as Accounting
+
+rectangle "ATM system" {
+  usecase "Display\nbalance" as DisplayBalance
+  usecase "Print\nstatement" as PrintStatement
+  usecase "Change\nPIN" as ChangePin
+  usecase "Deposit\ncash" as DepositCash
+
+  usecase "Authenticate\ncustomer" as Authenticate
+  usecase "Insert\ncard" as InsertCard
+  usecase "Enter\nPIN" as EnterPin
+  usecase "Validate card\nand PIN" as ValidateCustomer
+  usecase "Select\naccount" as SelectAccount
+
+  usecase "Retrieve\nbalance" as RetrieveBalance
+  usecase "Show\nbalance" as ShowBalance
+
+  usecase "Retrieve recent\ntransactions" as RetrieveTransactions
+  usecase "Print mini-\nstatement" as PrintMiniStatement
+
+  usecase "Enter new\nPIN" as EnterNewPin
+  usecase "Confirm new\nPIN" as ConfirmNewPin
+  usecase "Validate PIN\nrules" as ValidatePinRules
+  usecase "Update\nPIN" as UpdatePin
+
+  usecase "Insert\ncash" as InsertCash
+  usecase "Count\ncash" as CountCash
+  usecase "Confirm\namount" as ConfirmAmount
+  usecase "Credit\naccount" as CreditAccount
+  usecase "Print\nreceipt" as PrintReceipt
+  usecase "Access account\nservices" as AccountServices
+}
+
+Customer -- DisplayBalance
+Customer -- PrintStatement
+Customer -- ChangePin
+Customer -- DepositCash
+
+DisplayBalance ..> Authenticate
+DisplayBalance ..> SelectAccount
+DisplayBalance ..> RetrieveBalance
+DisplayBalance ..> ShowBalance
+
+PrintStatement ..> Authenticate
+PrintStatement ..> SelectAccount
+PrintStatement ..> RetrieveTransactions
+PrintStatement ..> PrintMiniStatement
+
+ChangePin ..> Authenticate
+ChangePin ..> EnterNewPin
+ChangePin ..> ConfirmNewPin
+ChangePin ..> ValidatePinRules
+ChangePin ..> UpdatePin
+
+DepositCash ..> Authenticate
+DepositCash ..> SelectAccount
+DepositCash ..> InsertCash
+DepositCash ..> CountCash
+DepositCash ..> ConfirmAmount
+DepositCash ..> CreditAccount
+DepositCash ..> PrintReceipt
+
+Authenticate ..> InsertCard
+Authenticate ..> EnterPin
+Authenticate ..> ValidateCustomer
+
+ValidateCustomer ..> AccountServices
+RetrieveBalance ..> AccountServices
+RetrieveTransactions ..> AccountServices
+UpdatePin ..> AccountServices
+CreditAccount ..> AccountServices
+
+Accounting -- AccountServices
+@enduml

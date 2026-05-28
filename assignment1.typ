@@ -107,3 +107,64 @@ We first separate functional and non-functional requirements. Non-functional req
 3. *Organizational requirements:* These are non-functional requirements derived from the policies, procedures, and standards of the customer or developer organization. They may specify the development process, programming language, operating environment, authentication procedure, or organizational standards that must be followed.
 
 4. *External requirements:* These are requirements imposed by factors outside the system and the organization developing it. They include legal, regulatory, ethical, accounting, safety, and privacy requirements. For example, a health system may have to comply with legislation governing the privacy of patient information.
+
+= Question 6
+
+#figure(
+  image("assets/atm-use-case.svg", height: 16cm),
+  caption: [ATM use case diagram],
+)
+
+#pagebreak()
+
+== Display balance
+
+#table(
+  columns: (28%, 72%),
+  inset: 5pt,
+  stroke: 0.5pt,
+  [*Actors*], [Customer, ATM, Accounting system],
+  [*Inputs*], [Customer's card, PIN, account selection, display balance request.],
+  [*Outputs*], [Displayed balance, customer card, optional printed receipt if the ATM offers this choice.],
+  [*Normal operation*], [The customer inserts the card and enters the PIN. The ATM validates the card and PIN with the accounting system. The customer selects "Display balance" and chooses the account if more than one account is linked to the card. The ATM requests the current balance from the accounting system. The balance is displayed on screen. The customer may choose another transaction or end the session, after which the card is returned.],
+  [*Exceptions*], [Invalid card: the card is retained and the customer is advised to contact the bank. Incorrect PIN: the customer may retry; after three failed attempts the card is retained. Accounting system unavailable: the transaction is cancelled and the card is returned. Account unavailable or closed: the transaction is cancelled and an explanatory message is displayed.],
+)
+
+== Print statement
+
+#table(
+  columns: (28%, 72%),
+  inset: 5pt,
+  stroke: 0.5pt,
+  [*Actors*], [Customer, ATM, Accounting system],
+  [*Inputs*], [Customer's card, PIN, account selection, print statement request.],
+  [*Outputs*], [Customer's card, printed mini-statement or statement receipt, account transaction details.],
+  [*Normal operation*], [The customer inserts the card and enters the PIN. The ATM validates the customer. The customer selects "Print statement" and chooses the required account. The ATM requests recent transaction details from the accounting system. The statement is printed, showing recent transactions and the current balance. The customer may choose another transaction or end the session, after which the card is returned.],
+  [*Exceptions*], [Invalid card: the card is retained. Incorrect PIN: the customer may retry; after three failed attempts the card is retained. Printer unavailable, jammed, or out of paper: the transaction is cancelled, the customer is informed, and the card is returned. Accounting system unavailable: the transaction is cancelled and the card is returned. No statement data available: the ATM displays a message and returns to the transaction menu.],
+)
+
+== Change PIN
+
+#table(
+  columns: (28%, 72%),
+  inset: 5pt,
+  stroke: 0.5pt,
+  [*Actors*], [Customer, ATM, Accounting system],
+  [*Inputs*], [Customer's card, current PIN, new PIN, repeated new PIN for confirmation.],
+  [*Outputs*], [Confirmation that the PIN has been changed, customer's card, optional printed confirmation receipt.],
+  [*Normal operation*], [The customer inserts the card and enters the current PIN. The ATM validates the card and PIN with the accounting system. The customer selects "Change PIN". The ATM asks for a new PIN and then asks the customer to re-enter it. If both entries match and the new PIN satisfies the bank's rules, the ATM sends the change request to the accounting system. The accounting system updates the PIN and confirms success. The ATM displays confirmation and returns the card when the customer ends the session.],
+  [*Exceptions*], [Invalid card: the card is retained. Incorrect current PIN: the customer may retry; after three failed attempts the card is retained. New PIN entries do not match: the customer is asked to enter the new PIN again. New PIN violates bank rules: the customer is asked to choose another PIN. Accounting system update fails: the PIN is not changed, an error is displayed, and the card is returned.],
+)
+
+== Deposit cash
+
+#table(
+  columns: (28%, 72%),
+  inset: 5pt,
+  stroke: 0.5pt,
+  [*Actors*], [Customer, ATM, Accounting system],
+  [*Inputs*], [Customer's card, PIN, account selection, cash inserted into the deposit slot, confirmation of counted amount.],
+  [*Outputs*], [Customer's card, receipt, updated account balance or pending deposit record.],
+  [*Normal operation*], [The customer inserts the card and enters the PIN. The ATM validates the customer. The customer selects "Deposit cash" and chooses the account to be credited. The ATM opens the deposit slot and asks the customer to insert cash. The ATM counts the notes and displays the counted amount. The customer confirms the amount. The ATM accepts and stores the cash, sends the deposit details to the accounting system, and receives confirmation that the account has been credited or that the deposit has been recorded as pending. The ATM prints a receipt and returns the card.],
+  [*Exceptions*], [Invalid card: the card is retained. Incorrect PIN: the customer may retry; after three failed attempts the card is retained. Cash cannot be read or includes rejected notes: the ATM rejects the affected notes or asks the customer to remove them. Customer cancels before confirmation: the cash is returned and the transaction is cancelled. Cash jam or hardware failure after cash has been accepted: the ATM records the fault, prints or displays a reference if possible, and notifies the accounting system for reconciliation. Accounting system unavailable: the ATM either cancels before accepting cash or records a pending deposit if cash has already been accepted.],
+)
