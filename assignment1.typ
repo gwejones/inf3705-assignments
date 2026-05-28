@@ -12,7 +12,7 @@
 
 = Question 1
 
-== A system to control antilock braking in a car
+*A system to control antilock braking in a car.*
 
 The most appropriate model is a *waterfall model* with formal specification and verification for the most critical parts.
 
@@ -20,7 +20,7 @@ An antilock braking system is an embedded, real-time, safety-critical control sy
 
 The waterfall model is suitable because it requires detailed requirements analysis, system and software design, implementation, integration, and system testing as distinct managed stages. Since each phase produces documents that are approved, it ensures that there is suitable oversight before the final product is used in the real world. This is important for safety analysis, traceability, regulatory approval, and evidence that the system behaves correctly. An agile approach would be less suitable as the core braking behaviour cannot safely be discovered through informal experimentation after deployment.
 
-== A virtual reality system to support software maintenance
+*A virtual reality system to support software maintenance.*
 
 I am assuming that this system would be some kind of tool which visually represents the components of a software system and interactions between them.
 
@@ -30,7 +30,7 @@ If this system is a support environment for software engineers and maintainers, 
 
 Incremental development is suitable because an initial version can be built to explore the main interaction ideas, then improved through feedback from maintainers. Later increments can add requested features. A purely waterfall process would be risky because it could produce a technically complete system that does not actually support maintainers effectively.
 
-== A university accounting system replacing an existing system
+*A university accounting system replacing an existing system.*
 
 The most appropriate model is *integration and configuration*, supported by plan-driven activities for migration and acceptance testing.
 
@@ -38,7 +38,7 @@ A university accounting system is a business information system. Accounting requ
 
 Integration and configuration is suitable because the university should first identify and evaluate existing accounting software, configure it according university policies and reporting needs, and integrate it with other existing Univeristy systems such as student administration, payroll, procurement, banking, and budgeting. I belivieve that this will reduce cost and risk compared with building everything from scratch. However, a controlled plan is still needed for converting existing data, audit requirements, user training, parallel running, and final cut-over from the old system.
 
-== An interactive travel planning system for lowest environmental impact
+*An interactive travel planning system for lowest environmental impact.*
 
 The most appropriate model is *incremental development*, with reuse of external data services where possible.
 
