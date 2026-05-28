@@ -73,3 +73,25 @@ For example, agile refactoring assumes that developers may improve code continuo
 Figure 3.11 in Somerville also indicates that agile principles can be hard to follow in practice. Customer involvement assumes that suitable customer representatives are available and can represent all stakeholders. Embracing change becomes difficult when many stakeholders assign different priorities to changes. Incremental delivery may not fit longer-term business or marketing planning cycles. The principle of "people, not process" may fail when some team members are not comfortable with the required levels of interaction expected in agile teams.
 
 Thus agile methods may fail in such organizations, not because agile is inherently flawed, but because its assumptions do not match the organization. Agile assumes skilled, collaborative, self-organizing teams, rapid feedback, flexible planning, and relatively lightweight procedures.
+
+= Question 4
+
+Agile methods are intended to produce useful software quickly in environments where requirements change rapidly (Section 3.4). There are three common characteristics of agile methods, which are interleaved:
+
+1. specification
+2. design
+3. implementation
+
+The system is developed as a series of increments. Tools are used to support activities such as testing, configuration management, and integration. These characteristics are supported by the agile principles listed in Figure 3.2.
+
+*Customer involvement* accelerates development because customers help define and prioritise requirements throughout the project. Instead of waiting for a complete requirements document to be agreed before implementation starts, the team can implement the most valuable requirements first and get immediate feedback. This reduces wasted work because misunderstandings and missing requirements are discovered while the system is still being developed.
+
+*Embracing change* also speeds up delivery. In a plan-driven process, a changed requirement may force changes to the requirements specification, design, implementation, and test plans. Agile methods assume that change is normal, so new or changed requirements can be added to later increments. This allows development to continue while the system adapts to changing business needs.
+
+*Incremental delivery* is the most obvious reason for faster deployment. Agile methods develop small increments and often make new releases available to customers every two or three weeks (Section 3.1). A complete final system does not have to be finished before users receive something usable. The first release can contain a minimal useful set of features, and later releases can add further functionality. This makes operational deployment possible much earlier than in a process where delivery happens only at the end.
+
+*Maintaining simplicity* reduces the amount of work that has to be done before release. Agile teams try to build only what is needed for the current requirements and avoid unnecessary complexity. In Extreme Programming, for example, Sommerville describes simple design and refactoring as practices that keep the software understandable and easier to change (Section 3.2 and Figure 3.4). Simpler software is faster to implement, test, modify, and deploy.
+
+*People, not process* accelerates development by reducing unnecessary bureaucracy and hand-offs. Skilled team members are trusted to organize their own work and communicate directly rather than relying only on detailed documents and formal meetings. This allows for fast decision-making, especially in small co-located teams where informal communication is more effective.
+
+Agile development practices support these principles. Small releases provide frequent deployment opportunities. Test-first development and automated tests reduce delays in testing. Continuous integration finds integration problems early. Refactoring prevents the code structure from degrading as changes are made. These principles and practices reduce wasted overhead, shorten feedback cycles, focus effort on the highest-priority work, and allow useful software to be delivered and deployed in smaller time increments.
