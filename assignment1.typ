@@ -95,3 +95,15 @@ The system is developed as a series of increments. Tools are used to support act
 *People, not process* accelerates development by reducing unnecessary bureaucracy and hand-offs. Skilled team members are trusted to organize their own work and communicate directly rather than relying only on detailed documents and formal meetings. This allows for fast decision-making, especially in small co-located teams where informal communication is more effective.
 
 Agile development practices support these principles. Small releases provide frequent deployment opportunities. Test-first development and automated tests reduce delays in testing. Continuous integration finds integration problems early. Refactoring prevents the code structure from degrading as changes are made. These principles and practices reduce wasted overhead, shorten feedback cycles, focus effort on the highest-priority work, and allow useful software to be delivered and deployed in smaller time increments.
+
+= Question 5
+
+We first separate functional and non-functional requirements. Non-functional requirements are further classified into product, organizational, and external requirements (Section 4.1 and Figure 4.3). Therefore, the four types of requirements are:
+
+1. *Functional requirements:* These describe the services or functions that the system must provide. They define what the system should do, how it should respond to particular inputs, and how it should behave in particular situations. For example, a university registration system may be required to allow a student to register for available modules.
+
+2. *Product requirements:* These are non-functional requirements that specify or constrain the runtime behaviour of the software product itself. They include requirements for performance, reliability, availability, usability, security, memory use, and response time. For example, a system may be required to respond to a user query within two seconds.
+
+3. *Organizational requirements:* These are non-functional requirements derived from the policies, procedures, and standards of the customer or developer organization. They may specify the development process, programming language, operating environment, authentication procedure, or organizational standards that must be followed.
+
+4. *External requirements:* These are requirements imposed by factors outside the system and the organization developing it. They include legal, regulatory, ethical, accounting, safety, and privacy requirements. For example, a health system may have to comply with legislation governing the privacy of patient information.
