@@ -117,7 +117,7 @@ We first separate functional and non-functional requirements. Non-functional req
 
 #pagebreak()
 
-== Display balance
+*Display balance:*
 
 #table(
   columns: (28%, 72%),
@@ -130,7 +130,7 @@ We first separate functional and non-functional requirements. Non-functional req
   [*Exceptions*], [Invalid card: the card is retained and the customer is advised to contact the bank. Incorrect PIN: the customer may retry; after three failed attempts the card is retained. Accounting system unavailable: the transaction is cancelled and the card is returned. Account unavailable or closed: the transaction is cancelled and an explanatory message is displayed.],
 )
 
-== Print statement
+*Print statement:*
 
 #table(
   columns: (28%, 72%),
@@ -143,7 +143,7 @@ We first separate functional and non-functional requirements. Non-functional req
   [*Exceptions*], [Invalid card: the card is retained. Incorrect PIN: the customer may retry; after three failed attempts the card is retained. Printer unavailable, jammed, or out of paper: the transaction is cancelled, the customer is informed, and the card is returned. Accounting system unavailable: the transaction is cancelled and the card is returned. No statement data available: the ATM displays a message and returns to the transaction menu.],
 )
 
-== Change PIN
+*Change PIN:*
 
 #table(
   columns: (28%, 72%),
@@ -156,7 +156,7 @@ We first separate functional and non-functional requirements. Non-functional req
   [*Exceptions*], [Invalid card: the card is retained. Incorrect current PIN: the customer may retry; after three failed attempts the card is retained. New PIN entries do not match: the customer is asked to enter the new PIN again. New PIN violates bank rules: the customer is asked to choose another PIN. Accounting system update fails: the PIN is not changed, an error is displayed, and the card is returned.],
 )
 
-== Deposit cash
+*Deposit cash:*
 
 #table(
   columns: (28%, 72%),
