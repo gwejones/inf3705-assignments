@@ -168,3 +168,23 @@ We first separate functional and non-functional requirements. Non-functional req
   [*Normal operation*], [The customer inserts the card and enters the PIN. The ATM validates the customer. The customer selects "Deposit cash" and chooses the account to be credited. The ATM opens the deposit slot and asks the customer to insert cash. The ATM counts the notes and displays the counted amount. The customer confirms the amount. The ATM accepts and stores the cash, sends the deposit details to the accounting system, and receives confirmation that the account has been credited or that the deposit has been recorded as pending. The ATM prints a receipt and returns the card.],
   [*Exceptions*], [Invalid card: the card is retained. Incorrect PIN: the customer may retry; after three failed attempts the card is retained. Cash cannot be read or includes rejected notes: the ATM rejects the affected notes or asks the customer to remove them. Customer cancels before confirmation: the cash is returned and the transaction is cancelled. Cash jam or hardware failure after cash has been accepted: the ATM records the fault, prints or displays a reference if possible, and notifies the accounting system for reconciliation. Accounting system unavailable: the ATM either cancels before accepting cash or records a pending deposit if cash has already been accepted.],
 )
+
+= Question 7
+
+The requirements specification should describe what the system should do, providing complete and detailed specification of the whole system.
+While the design should describe how the system will be designed and implemented.
+However, in practice these activities cannot always be completely separated.
+
+The design of the system architecture may sometimes have to start before the requirements specification is completed (Section 4,4) for three main reasons.
+
+A preliminary architecture may helps to structure the requirements.
+For a large system, the requirements can be organized around major subsystems that make up the system.
+An initial view of the architecture can help pin down and communicate the reuqirements in this case.
+For example, in an ATM system the requirements may be grouped around authentication, transaction handling, cash handling, printing, and communication with the bank's accounting system, and so the requirements can be more easily expressed with reference to those susbsystems.
+
+Existing systems and platforms often constrain the requirements.
+Since many systems are not developed in isolation, they have to interoperate with systems.
+These constraints affect what is feasible and may become requirements themselves. For example, if a new system must use an existing database or communicate with an existing accounting system, the architecture must be considered early so that the requirements are realistic.
+
+Some non-functional requirements are better understood by considering the architecture.
+A requirement for high availability may require replicated servers or backup components. A strict security requirement may require layered access control and separation of sensitive services. If these architectural issues are ignored until after the requirements are completed, the specification may describe a system that is too expensive,or technically unrealistic.
