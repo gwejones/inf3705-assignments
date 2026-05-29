@@ -1,0 +1,52 @@
+@startuml
+left to right direction
+
+actor Receptionist
+actor "Healthcare\npractitioner" as HealthcarePractitioner
+actor "External health\nrecord system" as HealthRecords
+
+rectangle "Mental health care system" {
+  usecase "Register\npatient" as RegisterPatient
+  usecase "Maintain patient\ndetails" as MaintainDetails
+  usecase "Manage\nappointments" as ManageAppointments
+  usecase "View patient\nrecord" as ViewRecord
+  usecase "Record\nconsultation" as RecordConsultation
+  usecase "Update care\nplan" as UpdateCarePlan
+  usecase "Prescribe\nmedication" as PrescribeMedication
+  usecase "Record risk\nassessment" as RecordRiskAssessment
+  usecase "Exchange patient\ninformation" as ExchangePatientInfo
+
+  usecase "Authenticate\nuser" as AuthenticateUser
+  usecase "Check access\nrights" as CheckAccessRights
+}
+
+Receptionist -- RegisterPatient
+Receptionist -- MaintainDetails
+Receptionist -- ManageAppointments
+Receptionist -- ViewRecord
+
+HealthcarePractitioner -- ViewRecord
+HealthcarePractitioner -- RecordConsultation
+HealthcarePractitioner -- UpdateCarePlan
+HealthcarePractitioner -- PrescribeMedication
+HealthcarePractitioner -- RecordRiskAssessment
+
+HealthRecords -- ExchangePatientInfo
+
+RegisterPatient ..> AuthenticateUser
+MaintainDetails ..> AuthenticateUser
+ManageAppointments ..> AuthenticateUser
+ViewRecord ..> AuthenticateUser
+RecordConsultation ..> AuthenticateUser
+UpdateCarePlan ..> AuthenticateUser
+PrescribeMedication ..> AuthenticateUser
+RecordRiskAssessment ..> AuthenticateUser
+ExchangePatientInfo ..> AuthenticateUser
+
+ViewRecord ..> CheckAccessRights
+RecordConsultation ..> CheckAccessRights
+UpdateCarePlan ..> CheckAccessRights
+PrescribeMedication ..> CheckAccessRights
+RecordRiskAssessment ..> CheckAccessRights
+ExchangePatientInfo ..> CheckAccessRights
+@enduml

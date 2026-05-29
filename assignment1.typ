@@ -188,3 +188,12 @@ These constraints affect what is feasible and may become requirements themselves
 
 Some non-functional requirements are better understood by considering the architecture.
 A requirement for high availability may require replicated servers or backup components. A strict security requirement may require layered access control and separation of sensitive services. If these architectural issues are ignored until after the requirements are completed, the specification may describe a system that is too expensive,or technically unrealistic.
+
+#pagebreak()
+
+= Question 8
+
+#figure(
+  image("assets/mental-health-use-case.svg", height: 16cm),
+  caption: [Mental health care system use case diagram],
+)
